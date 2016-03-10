@@ -32,6 +32,7 @@ set number
 set splitbelow
 set splitright
 set encoding=utf-8
+set wildmode=longest
 
 " Powerline setup
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
