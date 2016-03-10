@@ -28,9 +28,15 @@ Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+set number
 set splitbelow
 set splitright
 set encoding=utf-8
+
+" Powerline setup
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+set laststatus=2
+set term=xterm-256color
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
