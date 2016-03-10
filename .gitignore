@@ -1,0 +1,8 @@
+# Most of files in home folder shouldn't be indexed by git
+*
+
+# Repository is for config files - do not ignore it
+!.gitignore
+!.vimrc
+!.config/*
+
