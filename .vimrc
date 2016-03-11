@@ -83,6 +83,7 @@ set wrapmargin=8
 syntax on
 set ruler
 set modeline
+set pastetoggle=<F2>
 
 """"""""""""""""""""""""""""""""
 " Python-mode
