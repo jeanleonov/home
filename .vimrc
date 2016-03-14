@@ -20,7 +20,6 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Bundle 'klen/python-mode'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 
@@ -64,15 +63,7 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 Bundle 'Valloric/YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-"python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
+au BufRead,BufNewFile *.py,*.pyw let g:ycm_auto_trigger=0
 
 let python_highlight_all=1
 colorscheme zenburn
@@ -85,7 +76,8 @@ set ruler
 set modeline
 set pastetoggle=<F2>
 
-""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""
+Bundle 'klen/python-mode'
 " Python-mode
 " Activate rope
 " Keys:
@@ -128,5 +120,9 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 " Don't autofold code
 let g:pymode_folding = 0
+"---------------------------------
 
-"""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""
+Bundle 'davidhalter/jedi-vim'
+
+"---------------------------------
