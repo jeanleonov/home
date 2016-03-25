@@ -10,10 +10,10 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'vim-scripts/indentpython.vim'
+"Plugin 'tmhedberg/SimpylFold'
+"Plugin 'vim-scripts/indentpython.vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'nvie/vim-flake8'
+"Plugin 'nvie/vim-flake8'
 Plugin 'jnurmine/Zenburn'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -49,9 +49,6 @@ nnoremap <C-H> <C-W><C-H>
 set foldmethod=indent
 set foldlevel=99
 
-" Enable folding with the spacebar
-nnoremap <space> za
-
 au BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2
     \ set softtabstop=2
@@ -65,14 +62,13 @@ let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 au BufRead,BufNewFile *.py,*.pyw let g:ycm_auto_trigger=0
 
-let python_highlight_all=1
+"let python_highlight_all=1
 colorscheme zenburn
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 set bs=2
 set wrapmargin=8
 syntax on
-set ruler
 set modeline
 set pastetoggle=<F2>
 
@@ -93,6 +89,7 @@ Bundle 'klen/python-mode'
 " ]M            Jump on next class or method (normal, visual, operator modes)
 
 let g:pymode_rope = 1
+let g:pymode_rope_lookup_project = 0
 
 " Documentation
 let g:pymode_doc = 1
@@ -112,6 +109,9 @@ let g:pymode_virtualenv = 1
 let g:pymode_breakpoint = 1
 let g:pymode_breakpoint_bind = '<leader>b'
 
+" Run python script using ..:
+let g:pymode_run_bind = '<leader>l'
+
 " syntax highlighting
 let g:pymode_syntax = 1
 let g:pymode_syntax_all = 1
@@ -122,7 +122,7 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 let g:pymode_folding = 0
 "---------------------------------
 
-""""""""""""""""""""""""""""""""""
+" Python autocomplete
 Bundle 'davidhalter/jedi-vim'
-
-"---------------------------------
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'hlissner/vim-multiedit'

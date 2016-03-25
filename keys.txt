@@ -1,0 +1,3 @@
+:tabe - VIM new tab;
+Ctrl+P - VIM quick file search;
+za - VIM toggle block collapse (fold). Also use zc and zo;
