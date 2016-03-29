@@ -1,8 +1,10 @@
 # Most of files in home folder shouldn't be indexed by git
-*
+/*
 
 # Repository is for config files - do not ignore it
+!/.config/awesome/
+!/.config/xfce4/
+!/.config/htop/
 !.gitignore
 !.vimrc
-!.config/*
 !keys.txt
