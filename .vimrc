@@ -1,3 +1,18 @@
+" https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
+" git clone https://github.com/vim/vim.git
+" cd vim
+" ./configure --with-features=huge \
+"             --enable-multibyte \
+"             --enable-rubyinterp \
+"             --enable-pythoninterp \
+"             --with-python-config-dir=/usr/lib/python2.7/config \
+"             --enable-perlinterp \
+"             --enable-luainterp \
+"             --enable-gui=gtk2 --enable-cscope --prefix=/usr
+"             +clipboard +xterm_clipboard +X11
+" make VIMRUNTIMEDIR=/usr/share/vim/vim74
+" sudo make install
+
 set nocompatible              " required
 filetype off                  " required
 
@@ -22,8 +37,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
-
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -36,8 +49,10 @@ set wildmode=longest
 
 " Powerline setup
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
-set laststatus=2
 set term=xterm-256color
+set laststatus=2 " Always display the statusline in all windows
+set showtabline=2 " Always display the tabline, even if there is only one tab
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -70,6 +85,7 @@ set bs=2
 set wrapmargin=8
 syntax on
 set modeline
+" prevent auto intend on paste
 set pastetoggle=<F2>
 
 """"""""""""""""""""""""""""""""""

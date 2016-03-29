@@ -2,9 +2,12 @@
 /*
 
 # Repository is for config files - do not ignore it
-!/.config/awesome/
-!/.config/xfce4/
-!/.config/htop/
 !.gitignore
 !.vimrc
 !keys.txt
+
+!/.config
+/.config/*
+!/.config/awesome
+!/.config/xfce4
+!/.config/htop
